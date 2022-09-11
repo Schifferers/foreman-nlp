@@ -1,0 +1,47 @@
+intents:
+  - start
+  - stop
+  - reset
+  - status
+  - upgrade
+  - list
+  - unknown
+
+actions:
+  - start_server
+  - stop_server
+  - reset_server
+  - server_status
+  - upgrade_server
+  - server_list
+  - action_unknown
+
+responses:
+  start_server:
+    - text: Starting server...
+  stop_server:
+    - text: Stopping server...
+  reset_server:
+    - text: Resetting server...
+  server_status:
+    - text: The server is fine.
+  server_list:
+    - text: "Here are the servers:"
+  upgrade_server:
+    - text: Upgrading the server...
+  action_unknown:
+    - text: Sorry, I don't understand.
+
+entities:
+  - server_id
+  - version
+
+slots:
+  server_id:
+    type: text
+  version:
+    type: text
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
